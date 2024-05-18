@@ -30,7 +30,7 @@ class SoundBehaviour extends Behaviour {
   async init(audioCtx: AudioContext, soundFileUrl: string) {
     //setup nodes
     this.audioCtx = audioCtx;
-    const response = await fetch(soundFileUrl);
+    const response = await fetch("../public/SoundSources/stream.mp3");
     const arrayBuffer = await response.arrayBuffer();
     this.audioBuffer = await this.audioCtx.decodeAudioData(arrayBuffer);
     this.mainGainNode = this.audioCtx.createGain();
