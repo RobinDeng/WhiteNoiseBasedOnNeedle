@@ -68,15 +68,15 @@ class SoundBehaviour extends Behaviour {
       this.audioCtx.currentTime
     );
     this.convolver1 = this.audioCtx.createConvolver();
-    const convolver1Response = await fetch("../public/0_8s_small.mp3");
+    const convolver1Response = await fetch("../public/IRs/0_8s_small.mp3");
     const arrayBuffer1 = await convolver1Response.arrayBuffer();
     this.convolver1.buffer = await this.audioCtx.decodeAudioData(arrayBuffer1);
     this.convolver2 = this.audioCtx.createConvolver();
-    const convolver2Response = await fetch("../public/2_0s_medium.mp3");
+    const convolver2Response = await fetch("../public/IRs/2_0s_medium.mp3");
     const arrayBuffer2 = await convolver2Response.arrayBuffer();
     this.convolver2.buffer = await this.audioCtx.decodeAudioData(arrayBuffer2);
     this.convolver3 = this.audioCtx.createConvolver();
-    const convolver3Response = await fetch("../public/2_9s_large.wav");
+    const convolver3Response = await fetch("../public/IRs/2_9s_large.wav");
     const arrayBuffer3 = await convolver3Response.arrayBuffer();
     this.convolver3.buffer = await this.audioCtx.decodeAudioData(arrayBuffer3);
 
