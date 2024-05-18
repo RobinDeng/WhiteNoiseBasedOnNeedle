@@ -27,10 +27,12 @@ class SoundBehaviour extends Behaviour {
   get audioContext() {
     return this.soundManager.audioContext;
   }
-  async init(audioCtx: AudioContext, soundFileUrl: string) {
+  async init(audioCtx: AudioContext, 
+    soundFileUrl: string
+) {
     //setup nodes
     this.audioCtx = audioCtx;
-    const response = await fetch("../public/SoundSources/stream.mp3");
+    const response = await fetch(soundFileUrl);
     const arrayBuffer = await response.arrayBuffer();
     this.audioBuffer = await this.audioCtx.decodeAudioData(arrayBuffer);
     this.mainGainNode = this.audioCtx.createGain();
@@ -115,7 +117,9 @@ class SoundBehaviour extends Behaviour {
   start() {
     console.log(this);
     const audioCtx = new AudioContext();
-    this.init(audioCtx, this.soundFileUrl as string);
+    this.init(audioCtx, 
+        this.soundFileUrl as string
+    );
     this.bufferSourceNode = this.audioContext.createBufferSource();
     // this.bufferSourceNode.buffer =
     this.soundManager.addObject(this);
