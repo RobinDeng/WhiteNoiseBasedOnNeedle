@@ -12,7 +12,7 @@ export class idle extends SoundBehaviour {
     smoothenedSpeed:number = 0
 
     start(){
-        super.start();
+        super.awake();
 
     }
     update(){
