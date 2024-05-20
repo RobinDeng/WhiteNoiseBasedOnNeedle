@@ -4,7 +4,7 @@ import { Vector3 } from "three";
 
 declare type AudioClip = string;
 
-class SoundBehaviour extends Behaviour {
+export class SoundBehaviour extends Behaviour {
   @serializable(URL)
   soundFileUrl: AudioClip | null = null;
 
@@ -62,13 +62,7 @@ class SoundBehaviour extends Behaviour {
 
     this.soundManager.addObject(this);
 
-    window.addEventListener("keydown", (e) => {
-      if (e.key === "0") {
-          this.test__0ButtonTriggered();
-          console.log(" '0' Button Triggered")
-      }
-    });
-
+    
 
 
 
@@ -80,7 +74,7 @@ class SoundBehaviour extends Behaviour {
     this.gameObject.matrix;
     this.audioPanner.positionX.value;
   }
-  test__0ButtonTriggered() {
+  boundKeyButtonTriggered() {
     if(this.isPlaying===false){
     this.bufferSourceNode?.start();
     console.log("Playing");
