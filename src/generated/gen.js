@@ -2,13 +2,13 @@
 
 export const needle_exported_files = new Array();
 globalThis["needle:codegen_files"] = needle_exported_files;
-needle_exported_files.push("assets/4_23testScene.glb?v=1716170648054");
+needle_exported_files.push("assets/4_23testScene.glb?v=1716173014857");
 document.addEventListener("DOMContentLoaded", () =>
 {
 	const needleEngine = document.querySelector("needle-engine");
 	if(needleEngine && needleEngine.getAttribute("src") === null)
 	{
-		needleEngine.setAttribute("hash", "1716170648054");
+		needleEngine.setAttribute("hash", "1716173014857");
 		needleEngine.setAttribute("src", JSON.stringify(needle_exported_files));
 	}
 });
