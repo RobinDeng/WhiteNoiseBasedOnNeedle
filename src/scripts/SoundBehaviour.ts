@@ -19,7 +19,7 @@ export class SoundBehaviour extends Behaviour {
   volumeValue: number = 1;
 
   get soundManager(): SoundManager {
-    return (this.context as any).soundManager;
+    return window.soundManager;
   }
   get audioContext() {
     return this.soundManager.audioCtx;

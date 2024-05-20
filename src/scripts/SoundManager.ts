@@ -32,9 +32,9 @@ class SoundManager {
     }
 
     async setUpConvolvers(){
-        const responseSmall = await fetch("../public/IRs/0_8s_small.mp3")
-        const responseMeidum = await fetch("../public/IRs/2_0s_medium.mp3")
-        const responseLarge = await fetch("../public/IRs/2_9s_large.wav")
+        const responseSmall = await fetch("./assets/IRs/0_8s_small.mp3")
+        const responseMeidum = await fetch("./assets/IRs/2_0s_medium.mp3")
+        const responseLarge = await fetch("./assets/IRs/2_9s_large.wav")
 
         const arrayBuffer_convolverSmall = await responseSmall.arrayBuffer()
         const arrayBuffer_convolverMedium = await responseMeidum.arrayBuffer()
